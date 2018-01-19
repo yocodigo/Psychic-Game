@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Psychic Game</title>
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	</head>
+	<body>
+		<!-- Heading -->
+		<div class="jumbotron jumbotron-fluid">
+		  <div class="container">
+		    <h1 class="text-center" id="display-4" onclick="clickFunction()"><span id="user-text"><strong>Click me to start the game!</strong></span></h1>
+		    <p class="lead"></p>
+		  </div>
+		</div>
+		<!-- User Guesses -->
+		<h3 class="text-center">Guesses</h3>
+		<div class="container2">
+			<img src="assets/images/crystalball.jpg">
+			<div class="centered"><p id="guess"></p></div>
+		</div>
+
+		<br>
+		<br>
+		
+		<!-- Stats -->
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<table class="table">
+				  <thead class="thead-light">
+				    <tr>
+				      <th scope="col">Wins</th>
+				      <th scope="col">Losses</th>
+				      <th scope="col">Ties</th>
+				      <th scope="col">Guess Count</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th id="winCount"></th>
+				      <td id="lossCount"></td>
+				      <td id="tieCount"></td>
+				      <td id="guessCount"></td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+		function clickFunction() {
+			document.getElementById("display-4").innerHTML = "Enter any letter";
+		}	
+			
+		//Initial score
+		var winCount = document.getElementById("wincount");
+		var lossCount = document.getElementById("losscount");
+		var tieCount = document.getElementById("tiecount");
+		var guessCount = document.getElementById("guesscount");
+
+		// var userGuess = 0;
+		// var computerGuess = 0;
+
+		var userText = document.getElementById("guess");
+		console.log(userText)
+		// User Selection Process
+		//When I press a button(onkeyup), trigger the following events (using function(event)...
+		document.onkeyup = function(event) {
+		userText.textContent = event.key;
+		var userGuess = event.key;
+
+		//Computer Selection Process
+		var computerChoice = ['a']
+		// var computerChoice = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+		var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)]
+
+		//Compare user and computer selections
+			if (userGuess === computerGuess) {
+		        winCount++;
+				guessCount = 0;
+				var html =
+					"<p>Wins: " + winCount + "</p>" +
+					"<p>Loses: " + lossCount + "</p>" +
+					"<p>Guesses: " + guessCount + "</p>";	
+			} else {
+				lossCount++;
+				guessCount++;
+				var html =
+				"<p>Wins: " + winCount + "</p>" +
+				"<p>Loses: " + lossCount + "</p>" +
+				"<p>Guesses: " + guessCount + "</p>";
+			}	
+		}	
+		</script>
+
+	</body>
+</html>
