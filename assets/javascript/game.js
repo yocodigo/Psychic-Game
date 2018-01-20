@@ -31,7 +31,7 @@ function clickFunction(event) {
 		var maxValue = 10;
 		//Compare user and computer selections
 	 	if (userGuess != computerGuess) {
-			if (guessCount >= 10) {
+			if (guessCount > 9) {
 				lossCount.textContent++;
 				alert("YOU LOSE! Start Over.");
 				guessCount.textContent = 0;
@@ -40,12 +40,14 @@ function clickFunction(event) {
 				guessCount.textContent++;
 				console.log("Your guess is " + userGuess);
 				console.log("the computer's guess is " + computerGuess);
-			}		
-		} else if (userGuess === computerGuess) {
-		  winCount.textContent++;
+			}	
+		}else {
+			// (userGuess == computerGuess)
+		 	winCount.textContent++;
 			guessCount.textContent = 0;	
-			alert("YOU WIN!");
-		}		
+			alert("YOU WIN!");				
+		}
+
 
 			// if (userGuess === computerGuess) {
 		 //        winCount.textContent++;
