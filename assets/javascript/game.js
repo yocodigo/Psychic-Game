@@ -10,6 +10,8 @@ function clickFunction(event) {
 		lossCount.textContent = 0;
 		var guessCount = document.getElementById("guessCount");
 		guessCount.textContent = 0;
+		var computerGuess = document.getElementById("pcGuess");
+
 		// }
 	
 		var userText = document.getElementById("guess");
@@ -25,23 +27,44 @@ function clickFunction(event) {
 		//Computer Selection Process
 		var computerChoice = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 		var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+		computerGuess.textContent;
 		var maxValue = 10;
 		//Compare user and computer selections
-			if (userGuess === computerGuess) {
-		        winCount.textContent++;
-				guessCount.textContent = 0;	
-				alert("YOU WIN!");
-			} 
-			else if ((userGuess != computerGuess) && (guessCount <= 10))  {
-				guessCount.textContent++;
-			} 
-			else if ((userGuess != computerGuess) && (guessCount >= 10)) {
+	 	if (userGuess != computerGuess) {
+			if (guessCount >= 10) {
 				lossCount.textContent++;
 				alert("YOU LOSE! Start Over.");
 				guessCount.textContent = 0;
-				lossCount.textContent = 0;
 				winCount.textContent = 0;
-			}
+			}else {
+				guessCount.textContent++;
+				console.log("Your guess is " + userGuess);
+				console.log("the computer's guess is " + computerGuess);
+			}		
+		} else if (userGuess === computerGuess) {
+		  winCount.textContent++;
+			guessCount.textContent = 0;	
+			alert("YOU WIN!");
+		}		
+
+			// if (userGuess === computerGuess) {
+		 //        winCount.textContent++;
+			// 	guessCount.textContent = 0;	
+			// 	alert("YOU WIN!");
+			// }else (userGuess != computerGuess) {
+			// 	if (computerGuess > maxValue) {
+			// 		lossCount.textContent++;
+			// 		alert("YOU LOSE! Start Over.");
+			// 		guessCount.textContent = 0;
+			// 		lossCount.textContent = 0;
+			// 		winCount.textContent = 0;
+			// 	}else {
+			// 	guessCount.textContent++;
+			// 	console.log("Your guess is " + userGuess);
+			// 	console.log("the computer's guess is " + computerGuess);
+		    	// } //second else closing bracket
 			// document.querySelector("#game").innerHTML = html;
-				
-		}	
+	    	// }//first else closing bracket		
+	
+
+	}//function closing bracket	
