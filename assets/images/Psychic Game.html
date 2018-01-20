@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-	<head>
+<!-- saved from url=(0053)file:///C:/Users/Joel/Desktop/Psychic-Game/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 		<title>Psychic Game</title>
-		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-		 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		 <link rel="stylesheet" href="./Psychic Game_files/bootstrap.min.css">
+		 <link rel="stylesheet" type="text/css" href="./Psychic Game_files/style.css">
 	</head>
 	<body>
 		<!-- Heading -->
@@ -14,11 +14,10 @@
 		  </div>
 		</div>
 		<!-- User Guesses -->
-		<h3 class="text-center">Your Guesses</h3>
-		<div class="container2" id="crystal">
-			<!-- <img src=""> -->
-			<!-- <img src="assets/images/crystalball.jpg"> -->
-			<div class="centered"><p id="guess"></p></div>
+		<h3 class="text-center">Guesses</h3>
+		<div class="container2">
+			<img src="./Psychic Game_files/crystalball.jpg">
+			<div class="centered"><p id="guess">s</p></div>
 		</div>
 
 		<br>
@@ -37,9 +36,9 @@
 				  </thead>
 				  <tbody>
 				    <tr>
-				      <th id="winCount"></th>
-				      <td id="lossCount"></td>
-				      <td id="guessCount"></td>
+				      <th id="winCount">3</th>
+				      <td id="lossCount">78</td>
+				      <td id="guessCount">10</td>
 				    </tr>
 				  </tbody>
 				</table>
@@ -50,7 +49,6 @@
 
 		function clickFunction() {
 			document.getElementById("display-4").innerHTML = "Enter any letter";
-			document.getElementById("crystal").innerHTML = "<img src=assets/images/crystalball.jpg>";
 		}	
 			
 		//Initial score
@@ -62,11 +60,10 @@
 		guessCount.textContent = 0;
 
 		var userText = document.getElementById("guess");
-		// console.log(userText)
-		
+		console.log(userText)
 		// User Selection Process
 		//When I press a button(onkeyup), trigger the following events (using function(event)...
-		// document.onkeyup = function(event) {
+		document.onkeyup = function(event) {
 		userText.textContent = event.key;
 		var userGuess = event.key;
 
@@ -102,5 +99,5 @@
 		//Closing curly braket below is for onkeyup function
 		}	
 		</script>
-	</body>
-</html>
+	
+</body></html>
