@@ -15,9 +15,9 @@
 		</div>
 		<!-- User Guesses -->
 		<h3 class="text-center">Your Guesses</h3>
-		<div class="container2" id="crystal">
+		<div class="container2">
 			<!-- <img src=""> -->
-			<!-- <img src="assets/images/crystalball.jpg"> -->
+			<img id="crystal" src="assets/images/crystalball.jpg" style="display: none;">
 			<div class="centered"><p id="guess"></p></div>
 		</div>
 
@@ -25,6 +25,7 @@
 		<br>
 		<!-- col-lg-offset-4 -->
 		<!-- Stats -->
+		
 		<div class="row" id="game">
 			<div class="col-lg-4">
 				<table class="table">
@@ -45,62 +46,8 @@
 				</table>
 			</div>
 		</div>
-
-		<script type="text/javascript">
-
-		function clickFunction() {
-			document.getElementById("display-4").innerHTML = "Enter any letter";
-			document.getElementById("crystal").innerHTML = "<img src=assets/images/crystalball.jpg>";
-		}	
-			
-		//Initial score
-		var winCount = document.getElementById("winCount");
-		winCount.textContent = 0;
-		var lossCount = document.getElementById("lossCount");
-		lossCount.textContent = 0;
-		var guessCount = document.getElementById("guessCount");
-		guessCount.textContent = 0;
-
-		var userText = document.getElementById("guess");
-		// console.log(userText)
 		
-		// User Selection Process
-		//When I press a button(onkeyup), trigger the following events (using function(event)...
-		// document.onkeyup = function(event) {
-		userText.textContent = event.key;
-		var userGuess = event.key;
 
-		//Computer Selection Process
-		var computerChoice = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-		var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)]
-
-		//Compare user and computer selections
-			if (userGuess === computerGuess) {
-		        winCount.textContent++;
-				guessCount.textContent = 0;	
-			} 
-			else if (userGuess != computerGuess) {
-				lossCount.textContent++;
-				guessCount.textContent++;
-			} 
-			else if ((userGuess != computerGuess) && guessCount >= 6) {
-				winCount.textContent = 0;
-				lossCount.textContent = 0;
-				guessCount.textContent = 0;	
-				document.querySelector("#game").innerHTML = html;
-			}	
-
-		// //Compare user and computer selections
-		// 	if (userGuess === computerGuess) {
-		//         winCount.textContent++;
-		// 		guessCount.textContent = 0;	
-		// 	} else {
-		// 		lossCount.textContent++;
-		// 		guessCount.textContent++;
-		// 	document.querySelector("#game").innerHTML = html;
-		// 	}	
-		//Closing curly braket below is for onkeyup function
-		}	
-		</script>
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</body>
 </html>
