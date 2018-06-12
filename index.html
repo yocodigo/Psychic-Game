@@ -4,6 +4,7 @@
 		<title>Psychic Game</title>
 		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	</head>
 	<body>
 		<!-- Heading -->
@@ -14,6 +15,7 @@
 		  </div>
 		</div>
 		<!-- User Guesses -->
+		<div class="game">
 		<h3 class="text-center">Your Guesses</h3>
 		<div class="container2">
 			<!-- <img src=""> -->
@@ -28,7 +30,7 @@
 		<br>
 		<!-- Stats -->
 		<center>
-		<div class="row" id="game">
+		<div class="row" id="counts">
 	      <p>Wins</p>
 	      <p id="winCount"></p>
 	      <p>Losses</p>
@@ -37,7 +39,9 @@
 	      <p id="guessCount"></p>
 		</div>
 		</center>
+		</div>
 
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
+		
 	</body>
 </html>

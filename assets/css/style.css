@@ -22,3 +22,8 @@ body {
     z-index: 100;
     color: black;
 }
+
+.game{
+	visibility: visible;
+}
+
