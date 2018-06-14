@@ -1,6 +1,6 @@
 # Psychic Game
 
-###  Guessing game that puts you up against the computer. Can you guess what the computer is thinking??? 
+##  Guessing game that puts you up against the computer. Can you guess what the computer is thinking??? 
 
 ## About This App
 ![Alt Text](https://github.com/yocodigo/Psychic-Game/blob/master/assets/images/ezgif.com-video-to-gif.gif)    
